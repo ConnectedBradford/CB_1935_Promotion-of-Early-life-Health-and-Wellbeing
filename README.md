@@ -66,7 +66,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
  ###### [1.2 Good Learning Development]
 
  
- [Table1]
+ [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20GLD.pdf)
 
  
 [Graphs]
@@ -76,20 +76,20 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 
  ###### [1.3 Self-confidence and self-awareness]
  
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20Emotional%20%26%20social%20development%201.pdf)
 
  
 [Graphs]
 
  ###### [1.3 Managing feelings and behaviour]
  
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20PSEG07.pdf)
 
  
 [Graphs]
  
   ###### [1.3 Making relationships]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20PSEG08.pdf)
 
  
 [Graphs]
@@ -101,32 +101,32 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 
 
   ###### [1.4 Smoking status at booking appointment ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/SmokingstatAtBooking1.pdf)
 
  
 [Graphs]
 
    ###### [1.4 Alcohol consumption at booking appointment ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.4%20Alcohol%20consumption.pdf)
   
 ###### [1.4 BMI at booking appointment ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.4%20BMI%20AT%20BOOKING.pdf)
   
 ###### [1.4  percentage of children achieving the expected level in personal-social skills at 2-2½ years ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/HV%20data%20PersonalSocial%20Skills.pdf)
   
 ###### [1.4  percentage of children achieving the expected level in Communication skills at 2-2½ years ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/HV%20data%20CommunicationSkills.pdf)
 
 #### 1.5 Educational attainment 
 
 ###### [1.5 GCSE]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.5%20Educational%20Attainment%20GCSE.pdf)
 
 [Graphs]
 
 ###### [1.5 ALevel ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.5%20Educational%20Attainment%20ALEVEL.pdf)
 
 
 #### 1.6 Access to books
@@ -154,17 +154,17 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 #### 2.5 Childhood obesity
 
 ###### [2.5 BMI in Reception age children]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/2.4%20Childhood%20weight.pdf)
   
 ###### [2.5 BMI in Year 6 children]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/2%20childhoodweight%20yr6.pdf)
   
 #### 2.6 Adult obesity
 ###### [2.6 Percentage of adults (aged 18 plus) classified as overweight or obese]
 [FingerTips](https://fingertips.phe.org.uk/search/obesity#page/4/gid/1/pat/15/ati/502/are/E08000032/iid/93088/age/168/sex/4/cat/-1/ctp/-1/yrr/1/cid/4/tbm/1)
 
 ###### [2.6 Percentage of physically active adults]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/2.6%20PA%20Levels%20in%20Adults.pdf)
 
 
 ### :smiley: COS-EY 3: Mental health
@@ -185,13 +185,13 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 
 #### 3.2 Child mental health (incl. children’s stress and anxiety) & 3.3 Child mental well-being
 ###### [3.2 Percentage of children who are at risk (RS)]
-[Table1]
+[Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/selfHarm.pdf)
 
 
 [Graphs]
 
 ###### [3.2 Percentage of children with a referral to CAHMS (RS)]
-[Table1]
+[Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/CAHMS.pdf)
 
 
 [Graphs]
@@ -270,7 +270,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 ###  :family_man_woman_girl_boy: COS-EY 4: Social environment
 #### 4.1 Family & social relationships
 ###### [4.1 percentage of children achieving the expected level in personal-social skills at 2-2½ years ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/HV%20data%20PersonalSocial%20Skills.pdf)
 
 #### 4.2 Safety at home
 
@@ -288,7 +288,7 @@ This is only available on a regional level
 #### 4.4 Child social relationships & bullying
 
 ###### [4.4 percentage of children achieving the expected level in personal-social skills at 2-2½ years ]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/HV%20data%20PersonalSocial%20Skills.pdf)
   
   ###### [4.4 Emergency Hospital Admissions for Intentional Self-Harm ]
 [FingerTips](https://fingertips.phe.org.uk/search/self%20harm#page/0/gid/1/pat/15/par/E92000001/ati/501/are/E08000032/iid/21001/age/1/sex/4/cat/-1/ctp/-1/yrr/1/cid/4/tbm/1)
@@ -297,7 +297,7 @@ This is only available on a regional level
 
 #### 5.1 Use, quality, and satisfaction with open space
 ###### [5.1 Percentage of physically active adults]
-  [Table1]
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/2.6%20PA%20Levels%20in%20Adults.pdf)
 
 #### 5.2 Parks & green spaces (incl. access to green space)
 
