@@ -76,7 +76,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 
  ###### [1.3 Self-confidence and self-awareness]
  
-  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20Emotional%20%26%20social%20development%201.pdf)
+  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20PSEG06.pdf)
 
  
 [Graphs]
