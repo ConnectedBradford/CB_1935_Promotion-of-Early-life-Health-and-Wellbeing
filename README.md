@@ -53,7 +53,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20understanding.pdf)
 
  
-  [Graphs]
+  [Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20Speech%20Language%20and%20Communication%202.pdf)
 
 ###### [1.2 - Speaking]
  
