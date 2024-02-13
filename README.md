@@ -50,14 +50,14 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 ###### [1.2  - Understanding]
 
  
- [Table1]
+ [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20understanding.pdf)
 
  
   [Graphs]
 
 ###### [1.2 - Speaking]
  
-   [Table1]
+   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20Speaking.pdf) 
    
    [Graphs]
 
