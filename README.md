@@ -1,4 +1,4 @@
-# ActEarly1
+# ActEarly
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
