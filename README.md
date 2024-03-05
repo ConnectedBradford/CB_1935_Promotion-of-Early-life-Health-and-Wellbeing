@@ -111,6 +111,16 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
   
 ###### [1.4 BMI at booking appointment ]
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.4%20BMI%20AT%20BOOKING.pdf)
+
+  ###### [1.4 Breastfeeding status at 6 to 8 week health visit]  
+  
+   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/Breastfeeding%20status%20HV.pdf)
+
+   ###### [1.4 New Birth visits completed withing 14 days]
+   
+[Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/NBVs.pdf)
+
+
   
 ###### [1.4  percentage of children achieving the expected level in personal-social skills at 2-2½ years ]
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/HV%20data%20PersonalSocial%20Skills.pdf)
