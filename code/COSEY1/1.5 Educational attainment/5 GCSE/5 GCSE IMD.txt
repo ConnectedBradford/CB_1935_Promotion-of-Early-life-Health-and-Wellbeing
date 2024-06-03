@@ -1,0 +1,59 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_5GCSEIMD`
+
+as
+
+select gcse.*,
+
+CASE WHEN IMDInfo.IMDAverage IS null then 'No Data' else cast(IMDAverage as string)
+end as IMD
+
+ from `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_5GCSE` gcse
+LEFT JOIN(
+select 
+round(avg(AvgIMD),0) IMDAverage,
+person_id,
+v.startDate,
+v.endDate
+
+ from(
+
+select * from(
+
+select 
+
+x.person_id,
+x.startDate,
+x.endDate,
+IMD.dateeventrecorded,
+IMD.tbl_srpatientaddresshistory_end_date,
+IMD.AvgIMD,
+case when cast(dateeventrecorded as date) between cast(x.startDate as date) and x.endDate then 'INAY'
+when cast(tbl_srpatientaddresshistory_end_date as date) < x.startDate then 'remove'
+when (x.startDate  between cast(dateeventrecorded as date) and cast(tbl_srpatientaddresshistory_end_date as date))
+and (x.endDate  between cast(dateeventrecorded as date) and cast(tbl_srpatientaddresshistory_end_date as date))
+
+ then 'INAY'
+when cast(dateeventrecorded as date) > x.startDate then 'remove'
+else null
+end as test
+
+
+
+
+ from(SELECT DATE(cast(BASE.start as int),07,30) startDate,DATE(cast(BASE.end1 as int),08,30) endDate,person_id FROM(
+
+select 
+
+distinct 
+*,
+LEFT(AcademicYear, 4)as start,
+Right(AcademicYear, 4) AS end1
+ from yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_5GCSE)BASE)x
+
+ left join `CB_1935_AK.src_bmbc_AvgIMD` IMD on IMD.person_id = x.person_id)y
+
+ where y.test  in(null,'INAY'))v
+
+group by person_id,
+v.startDate,
+v.endDate)IMDInfo on IMDInfo.person_id = gcse.person_id 

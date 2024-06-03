@@ -1,0 +1,32 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HV68Datap2`
+
+as
+  SELECT distinct
+    
+    a.person_id,
+    b.birth_datetime,
+    CASE
+      WHEN REGEXP_EXTRACT(b.ethnicity_source_value, r'^(.+?):') IS NOT NULL THEN REGEXP_EXTRACT(          
+        b.ethnicity_source_value, r'^(.+?):')
+      ELSE "Unknown"
+    END AS ethnic_group,
+    b.gender_source_value,
+    a.dateevent,
+    DATE_DIFF(a.dateevent, b.birth_datetime, YEAR) as age_at_encounter,
+    a.snomedcode,
+    a.ctv3code,
+    a.ctv3text,
+    numericvalue,
+    EXTRACT(YEAR FROM a.dateevent) as event_year,
+ 
+  FROM
+    `yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.tbl_srcode` a
+  INNER JOIN
+    `yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.person` b ON a.person_id = b.person_id
+  
+ 
+     where ctv3code in ('62P1.','62P3.','6421.','6422.','6423.','XE1SF')
+     and DATE_DIFF(a.dateevent, b.birth_datetime, YEAR) = 0
+
+
+     

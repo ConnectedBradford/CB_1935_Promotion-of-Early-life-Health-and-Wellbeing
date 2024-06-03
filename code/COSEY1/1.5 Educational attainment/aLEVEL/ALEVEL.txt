@@ -1,0 +1,67 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_Alevel`
+
+as
+
+select distinct
+PID as person_id,
+
+CASE
+  WHEN REGEXP_EXTRACT(ethnicity_source_value, r'^(.+?):') IS NOT NULL THEN REGEXP_EXTRACT(ethnicity_source_value, r'^(.+?):')
+ ELSE "Unknown"
+END AS ethnic_group
+    , 
+
+case when  Gender in ('M','Male') then 'Male'
+when Gender in ('F','Female') then 'Female'
+when Gender is null then 'null' 
+else 'Unknown'
+
+end as Gender,
+case when ALevel >= 3 then "1. 3 Or More Alevels at A*-B"
+ when ALevel = 0 then "3. 0 ALevels"
+else "2. < 3 ALevels A* - B"
+end as ALevelOutcome,
+AcademicYear,
+
+ FSMEligible 
+ 
+ from(
+SELECT distinct
+p.person_id as PID,
+ethnicity_source_value ,
+gender_source_value AS Gender,
+CASE WHEN cast(FSMEligible as string) is null then 'No Data'
+else cast(FSMEligible as string)
+end as FSMEligible,
+score.*
+
+
+ FROM `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.person`p
+
+inner join (SELECT distinct BASE.person_id,BASE.AcademicYear,
+
+case when AAALevel is null and BALevel is null then 0
+when AAALevel is null and BALevel is not null then BALevel
+when AAALevel is not null and BALevel is null then AAALevel
+else AAALevel +BALevel
+
+end as ALevel
+
+FROM(
+SELECT person_id,AcademicYear,
+CAST(AAALevel AS INT)AAALevel ,
+CAST(BALevel AS INT)BALevel,
+ FROM `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.src_KS5_student` )BASE
+ inner join(select person_id,
+ max(AcademicYear)AcademicYear
+
+ from (select distinct person_id,
+AcademicYear
+  FROM `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.src_KS5_student`)
+group by person_id)AY on AY.person_id = BASE.person_id and AY.AcademicYear = BASE.AcademicYear
+)score on score.person_id = p.person_id
+LEFT join
+(select  person_id,FSMEligible,AcademicYear from `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.src_census`)  c on c.person_id = p.person_id and c.AcademicYear = score.AcademicYear
+ 
+
+ )

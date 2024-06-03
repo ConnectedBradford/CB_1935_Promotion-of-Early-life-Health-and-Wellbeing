@@ -1,0 +1,30 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HV68imdFINAL`
+
+as
+
+
+
+select distinct
+  person_id,
+ -- birth_datetime,
+  ethnic_group,
+  CASE
+    WHEN gender_source_value = 'M' THEN 'Male'
+    WHEN gender_source_value = 'F' THEN 'Female'
+WHEN gender_source_value = 'NULL' THEN 'Unknown'
+    ELSE 'Unknown'
+  END AS gender_source_value,
+ case when FeedingType =  'Bottle fed' then 'Bottle-fed'
+when FeedingType = 'Breast fed with supplement' then 'Breast-fed with supplement'
+when FeedingType ='Breastfed' then 'Breast-fed'
+
+else 'no data'
+end as FeedingType
+,
+
+  numericvalue,
+  cast(IMD as string) IMD,
+  cast(event_year as string) event_year
+
+
+ from `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HV68imd`

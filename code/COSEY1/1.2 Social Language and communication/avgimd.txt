@@ -1,0 +1,35 @@
+CREATE VIEW `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_AvgIMD`
+AS
+
+select distinct  
+
+person_id,
+AvgIMD,
+partialpostcode,
+dateeventrecorded,
+tbl_srpatientaddresshistory_end_date
+
+ FROM
+`yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.tbl_srpatientaddresshistory`
+
+left join 
+
+(SELECT 
+X.partial,
+
+round(AVG(X.IMD)) AS AvgIMD
+
+
+ FROM(
+
+SELECT DISTINCT
+
+SPLIT(Postcode, ' ')[offset(0)] as partial,
+
+
+Index_of_Multiple_Deprivation_Decile as IMD
+
+ FROM `yhcr-prd-phm-bia-core.CB_LOOKUPS.tbl_IMD_by_LSOA` )X
+
+ GROUP BY X.partial
+)base on base.partial = partialpostcode

@@ -1,0 +1,63 @@
+##EYFSP
+
+##OUTCOME 1
+CREATE VIEW `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_EYFSP_PSEG08`
+AS
+
+select distinct
+person_id,
+
+CASE
+  WHEN REGEXP_EXTRACT(ethnicity_source_value, r'^(.+?):') IS NOT NULL THEN REGEXP_EXTRACT(ethnicity_source_value, r'^(.+?):')
+ ELSE "Unknown"
+END AS ethnic_group
+    , 
+ CASE
+WHEN REGEXP_EXTRACT(ethnicity_source_value, r':(.+?)-') IS NOT NULL THEN REGEXP_EXTRACT(ethnicity_source_value, r':(.+?)-')
+ ELSE "Other"
+END AS Ethnicity
+,case when  Gender in ('M','Male') then 'M'
+when Gender in ('F','Female') then 'F'
+when Gender is null then 'null' 
+else 'U'
+
+end as Gender,
+
+AcademicYear,
+cast(LEFT(AcademicYear,4) as int) as YearStart,
+
+case when score = "A" then 'A - Exemption not assessed '
+when score = '1' then '1 - Emerging'
+when score = '2' then '2 - Expected level'
+when score = '3' then  '3 - Exceeded'
+else 'No Data'
+end as score,
+Metric,
+ FSMEligible 
+
+ from(
+SELECT distinct
+p.person_id,
+ethnicity_source_value ,
+gender_source_value AS Gender,
+case when year_of_birth = 1910 then null
+else year_of_birth
+end
+
+ as BirthYear,
+score.AcademicYear,
+score.PSEG08 as score,
+"PSEG08 - Making relationships" as metric,
+FSMEligible
+
+ FROM `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.person`p
+
+left join `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.src_EYFSP` score on score.person_id = p.person_id
+left join
+(select  person_id,FSMEligible,AcademicYear from `yhcr-prd-phm-bia-core.CB_FDM_DepartmentForEducation.src_census`)  c on c.person_id = p.person_id and c.AcademicYear = score.AcademicYear)
+
+
+where AcademicYear  not in ('2002/2003','2003/2004','2004/2005','2005/2006','2006/2007','2007/2008','2008/2009','2009/2010','2010/2011','2011/2012')
+
+
+

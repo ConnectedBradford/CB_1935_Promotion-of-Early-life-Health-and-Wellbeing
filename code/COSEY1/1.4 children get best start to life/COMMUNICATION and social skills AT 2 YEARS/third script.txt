@@ -1,0 +1,56 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HVDatafINAL`
+
+as
+
+SELECT distinct  *,
+case when ASQ = 'ASQ-3 24 month questionnaire - personal-social score'
+and cast(numericvalue as float64) <33.71 then 'Further assesment needed'
+when ASQ = 'ASQ-3 24 month questionnaire - personal-social score'
+and cast(numericvalue as float64) between 33.71 and 42.5 then 'Provide learning activities and monitor'
+when ASQ = 'ASQ-3 24 month questionnaire - personal-social score'
+and cast(numericvalue as float64) >42.5 then 'Child devlopement on schedule'
+
+
+when ASQ = 'ASQ-3 24 month questionnaire - communication score'
+and cast(numericvalue as float64) <22.77 then 'Further assesment needed'
+when ASQ = 'ASQ-3 24 month questionnaire - communication score'
+and cast(numericvalue as float64) between 22.77 and 35 then 'Provide learning activities and monitor'
+when ASQ = 'ASQ-3 24 month questionnaire - communication score'
+and cast(numericvalue as float64) >35 then 'Child devlopement on schedule'
+
+
+else null
+end as result
+ ,
+from( select 
+  person_id,
+ -- birth_datetime,
+  ethnic_group,
+  CASE
+    WHEN gender_source_value = 'M' THEN 'Male'
+    WHEN gender_source_value = 'F' THEN 'Female'
+WHEN gender_source_value = 'NULL' THEN 'Unknown'
+    ELSE 'Unknown'
+  END AS gender_source_value,
+ -- dateevent,
+ -- CAST(age_at_encounter AS INT64) AS age_at_encounter, 
+  
+  --snomedcode,
+  --ctv3code,
+ case when  ctv3text =  'ASQ-3 24 month questionnaire - personal-social sco' then 
+
+	
+'ASQ-3 24 month questionnaire - personal-social score'
+else ctv3text 
+end as ASQ,
+
+  numericvalue,
+  cast(IMD as string) IMD,
+  cast(event_year as string) event_year
+FROM
+  `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HVDatap2`
+WHERE
+  row_num = 1
+  and 
+  event_year >= 2012
+  and age_at_encounter between 2 and 3)base
