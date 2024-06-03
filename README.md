@@ -59,7 +59,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
  
    [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20Speaking.pdf) 
    
-   [Graphs]
+   [Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20Speech%20Language%20and%20Communication%20v2.pdf)
 
 
    
@@ -69,7 +69,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
  [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20GLD.pdf)
 
  
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.2%20Speech%20Language%20and%20Communication%20GLD.pdf)
 
    
 #### 1.3 Emotional & social development
@@ -79,20 +79,20 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20PSEG06.pdf)
 
  
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20Emotional%20%26%20social%20development%201.pdf)
 
  ###### [1.3 Managing feelings and behaviour]
  
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20PSEG07.pdf)
 
  
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20Emotional%20%26%20social%20development2.pdf)
  
   ###### [1.3 Making relationships]
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20PSEG08.pdf)
 
  
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.3%20Emotional%20%26%20social%20development%203.pdf)
  
 
 
@@ -104,7 +104,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/SmokingstatAtBooking1.pdf)
 
  
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.4%20best%20start%20to%20life%20-%20smoking%20status%20at%20booking.pdf)
 
    ###### [1.4 Alcohol consumption at booking appointment ]
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.4%20Alcohol%20consumption.pdf)
@@ -133,7 +133,7 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 ###### [1.5 GCSE]
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.5%20Educational%20Attainment%20GCSE.pdf)
 
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.5%20EducationalAttainment%20-%205GCSEs.pdf)
 
 ###### [1.5 ALevel ]
   [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/1.5%20Educational%20Attainment%20ALEVEL.pdf)
@@ -198,13 +198,13 @@ Using timestamps on data collection, extraction or diagnosis dates and where sui
 [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/selfHarm.pdf)
 
 
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/COS-EY%203_%20Mental%20Health%20Risk%20Percentage%20Over%20Time.pdf)
 
 ###### [3.2 Percentage of children with a referral to CAHMS (RS)]
 [Table1](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/CAHMS.pdf)
 
 
-[Graphs]
+[Graphs](https://github.com/ConnectedBradford/CB_1935_Promotion-of-Early-life-Health-and-Wellbeing/blob/main/docs/COS-EY%203_%20Mental%20Health%20-%20CAMHS%20Percentage%20Over%20Time.pdf)
 
 
 ###### [3.2 Percentage of looked after children whose emotional wellbeing is a cause for concern]
