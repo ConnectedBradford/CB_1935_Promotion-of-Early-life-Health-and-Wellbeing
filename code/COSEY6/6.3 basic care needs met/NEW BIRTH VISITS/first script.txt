@@ -1,0 +1,38 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HVNBV`
+
+as
+
+SELECT distinct
+    
+    a.person_id,
+    b.birth_datetime,
+    CASE
+      WHEN REGEXP_EXTRACT(b.ethnicity_source_value, r'^(.+?):') IS NOT NULL THEN REGEXP_EXTRACT(          
+        b.ethnicity_source_value, r'^(.+?):')
+      ELSE "Unknown"
+    END AS ethnic_group,
+   CASE
+    WHEN b.gender_source_value = 'M' THEN 'Male'
+    WHEN  b.gender_source_value = 'F' THEN 'Female'
+WHEN  b.gender_source_value = 'NULL' THEN 'Unknown'
+    ELSE 'Unknown'
+  END AS gender_source_value,
+    a.dateevent,
+    case when DATE_DIFF(a.dateevent, b.birth_datetime, WEEK)  <= 2 then 'Within 2 weeks'
+    when DATE_DIFF(a.dateevent, b.birth_datetime, WEEK)  > 2 then 'After 2 weeks'
+    else 'No Data'
+    end as NBV,
+    a.snomedcode,
+    a.ctv3code,
+    numericvalue,
+    EXTRACT(YEAR FROM a.dateevent) as event_year,
+ 
+
+  FROM
+    `yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.tbl_srcode` a
+  INNER JOIN
+    `yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.person` b ON a.person_id = b.person_id
+  
+ 
+     where ctv3text like 'Health visitor new birth visit'
+     and DATE_DIFF(a.dateevent, b.birth_datetime, YEAR) = 0

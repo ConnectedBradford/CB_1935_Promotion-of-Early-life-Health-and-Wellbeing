@@ -1,0 +1,101 @@
+CREATE VIEW `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_NCMP1`
+AS
+
+select 
+
+person_id,
+ageCat,
+cast(extract(year from DateOfMeasure) as string) DateOfMeasure,
+ethnic_group,
+cast(AvgIMD as string) AvgIMD,
+gender_source_value,
+#bmitest,height,weight,
+case 
+when gender_source_value = 'Female' and ageAtmeasure =4 and bmitest < 13.25 then 'Underweight'
+when gender_source_value = 'Female' and ageAtmeasure =4 and bmitest between 13.25 and 17.25  then 'Healthy Weight'
+when gender_source_value = 'Female' and ageAtmeasure =4 and bmitest between 17.25 and 19  then 'Overweight'
+when gender_source_value = 'Female' and ageAtmeasure =4 and bmitest > 19.0 then 'Very overweight'
+
+when gender_source_value = 'Male' and ageAtmeasure =4 and bmitest < 13.75 then 'Underweight'
+when gender_source_value = 'Male' and ageAtmeasure =4 and bmitest between 13.75 and 17.5  then 'Healthy Weight'
+when gender_source_value = 'Male' and ageAtmeasure =4 and bmitest between 17.5 and 18.25  then 'Overweight'
+when gender_source_value = 'Male' and ageAtmeasure =4 and bmitest > 18.25 then 'Very overweight'
+
+when gender_source_value = 'Female' and ageAtmeasure =5 and bmitest < 13.0 then 'Underweight'
+when gender_source_value = 'Female' and ageAtmeasure =5 and bmitest between 13.0 and 17.25  then 'Healthy Weight'
+when gender_source_value = 'Female' and ageAtmeasure =5 and bmitest between 17.25 and 19.1  then 'Overweight'
+when gender_source_value = 'Female' and ageAtmeasure =5 and bmitest > 19.1 then 'Very overweight'
+
+when gender_source_value = 'Male' and ageAtmeasure =5 and bmitest < 13.5 then 'Underweight'
+when gender_source_value = 'Male' and ageAtmeasure =5 and bmitest between 13.5 and 17.5  then 'Healthy Weight'
+when gender_source_value = 'Male' and ageAtmeasure =5 and bmitest between 17.5 and 18.25  then 'Overweight'
+when gender_source_value = 'Male' and ageAtmeasure =5 and bmitest > 18.25 then 'Very overweight'
+
+when gender_source_value = 'Female' and ageAtmeasure =10 and bmitest < 13.5 then 'Underweight'
+when gender_source_value = 'Female' and ageAtmeasure =10 and bmitest between 13.5 and 20.25 then 'Healthy Weight'
+when gender_source_value = 'Female' and ageAtmeasure =10 and bmitest between 20.25 and 23.0 then 'Overweight'
+when gender_source_value = 'Female' and ageAtmeasure =10 and bmitest > 23.0 then 'Very overweight'
+
+when gender_source_value = 'Male' and ageAtmeasure =10 and bmitest < 13.75 then 'Underweight'
+when gender_source_value = 'Male' and ageAtmeasure =10 and bmitest between 13.75 and 19.5  then 'Healthy Weight'
+when gender_source_value = 'Male' and ageAtmeasure =10 and bmitest between 19.5 and 21.75 then 'Overweight'
+when gender_source_value = 'Male' and ageAtmeasure =10 and bmitest > 21.75 then 'Very overweight'
+
+when gender_source_value = 'Female' and ageAtmeasure =11 and bmitest < 13.5 then 'Underweight'
+when gender_source_value = 'Female' and ageAtmeasure =11 and bmitest between 13.5 and 21.0 then 'Healthy Weight'
+when gender_source_value = 'Female' and ageAtmeasure =11 and bmitest between 21.0 and 24.0 then 'Overweight'
+when gender_source_value = 'Female' and ageAtmeasure =11 and bmitest > 24.0 then 'Very overweight'
+
+when gender_source_value = 'Male' and ageAtmeasure =11 and bmitest < 14.0 then 'Underweight'
+when gender_source_value = 'Male' and ageAtmeasure =11 and bmitest between 14.0 and 19.5  then 'Healthy Weight'
+when gender_source_value = 'Male' and ageAtmeasure =11 and bmitest between 19.5 and 22.75 then 'Overweight'
+when gender_source_value = 'Male' and ageAtmeasure =11 and bmitest > 22.75 then 'Very overweight'
+
+else 'Other' 
+end as BMI
+from(
+  
+SELECT DISTINCT
+
+measure.person_id,
+CASE
+WHEN REGEXP_EXTRACT(ethnicity_source_value, r'^(.+?):') IS NOT NULL THEN REGEXP_EXTRACT(ethnicity_source_value, r'^(.+?):')
+ELSE "Unknown"
+END AS ethnic_group,
+
+measure.Height,
+measure.Weight,
+ageAtmeasure,
+
+case when measure.ageAtmeasure in(4,5) then 'Reception Age'
+when measure.ageAtmeasure in(10,11) then 'Year 6 Age'
+else 'remove'
+end as ageCat,
+
+DateOfMeasure,
+
+case when height != 0.0 and weight != 0.0 then ROUND(weight / ((height/100) * (height/100)), 0) 
+when height!= 0.0 and weight = 0.0 then 0.0
+when height= 0.0 and weight != 0.0 then 0.0
+else 0.0
+end as bmitest,
+
+#gender_source_value,
+case when gender_source_value = 'F' then 'Female'
+when gender_source_value = 'M' then 'Male'
+when gender_source_value in ('I','U','1','2') then 'Unknown'
+else 'No Data'
+end as gender_source_value
+,
+AvgIMD
+
+FROM `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_NCMPBase` measure
+inner join CB_FDM_NCMP_v1.person person on person.person_id = measure.person_id
+left join  `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_AvgIMD` IMD on IMD.person_id = measure.person_id AND cast(DateOfMeasure as date) BETWEEN cast(IMD.dateeventrecorded as date) AND cast(IMD.tbl_srpatientaddresshistory_end_date as date))x
+
+where
+ ageCat != 'remove' and 
+cast(extract(year from DateOfMeasure) as string) not in ('2011','2012','2013','2014','2015')
+
+
+

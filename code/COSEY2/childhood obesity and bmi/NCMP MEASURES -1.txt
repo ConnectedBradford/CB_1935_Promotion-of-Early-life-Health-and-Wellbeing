@@ -1,0 +1,40 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_NCMPBase`
+
+as
+select max(DateOfMeasure)DateOfMeasure
+,
+person_id,Height,Weight,ageAtmeasure
+from(
+SELECT DISTINCT 
+*,
+DATE_DIFF(CAST(DateOfMeasure AS DATE),cast((DOB_formatted) as date),year) ageAtmeasure
+
+ FROM(
+SELECT 
+person_id,
+DateOfMeasure,
+DOB_formatted,
+round(cast(Height as float64),0) Height,
+round(cast(Weight as float64),0) Weight
+
+
+ FROM(
+
+SELECT DISTINCT
+
+person_id,
+DateOfMeasure,
+DOB_formatted,
+case when Weight = 'NULL' then '0.0'
+when Weight is null then '0.0'
+else Weight
+end as Weight,
+case when Height = 'NULL' then '0.0'
+when Height is null then '0.0'
+else Height
+end as Height,
+
+
+ FROM `yhcr-prd-phm-bia-core.CB_FDM_NCMP_v1.tbl_bmbc_NCMP_Measures` measure))X)z
+
+ group by person_id,Height,Weight,ageAtmeasure

@@ -1,0 +1,37 @@
+create view `yhcr-prd-phm-bia-core.CB_1935_AK.src_bmbc_HVData`
+
+as
+  SELECT distinct
+ a.person_id,
+    b.birth_datetime,
+    CASE
+      WHEN REGEXP_EXTRACT(b.ethnicity_source_value, r'^(.+?):') IS NOT NULL THEN REGEXP_EXTRACT(b.ethnicity_source_value, r'^(.+?):')
+      ELSE "Unknown"
+    END AS ethnic_group,
+    b.gender_source_value,
+    a.dateevent,
+    DATE_DIFF(a.dateevent, b.birth_datetime, YEAR) as age_at_encounter,
+    a.snomedcode,
+    a.ctv3code,
+    a.ctv3text,
+    numericvalue,
+ 
+    EXTRACT(YEAR FROM a.dateevent) as event_year,
+   -- ROW_NUMBER() OVER (PARTITION BY a.person_id, a.dateevent ORDER BY a.person_id, a.dateevent) AS row_num
+  FROM
+    `yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.tbl_srcode` a
+  INNER JOIN
+    `yhcr-prd-phm-bia-core.CB_FDM_PrimaryCare_V8.person` b ON a.person_id = b.person_id
+  
+ 
+     where ctv3text in (
+
+   'ASQ-3 24 month questionnaire - personal-social sco',
+
+	
+'ASQ-3 24 month questionnaire - personal-social score',
+	
+'ASQ-3 24 month questionnaire - communication score',
+
+'ASQ:SE-2 24 month questionnaire score')
+or a.snomedcode = '401140000'
